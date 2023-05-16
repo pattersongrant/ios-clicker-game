@@ -17,7 +17,7 @@ struct ContentView: View {
                 .padding(.top, 9.0)
             Button("Continue") {
                 print("wow")
-                clicked = true
+                clicked.toggle()
                 
             }
             .padding(.top, 2.0)
@@ -30,7 +30,7 @@ struct ContentView: View {
 
 struct NewView: View {
     var body: some View {
-        Text("hello,,, testing")
+        Text("Welcome to my App")
     }
 }
 
