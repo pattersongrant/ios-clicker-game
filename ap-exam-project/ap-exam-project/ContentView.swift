@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+var isHappy = true
 struct ContentView: View {
     @State var clicked = false
     var body: some View {
@@ -29,10 +30,46 @@ struct ContentView: View {
 }
 
 struct NewView: View {
+    @State var clicked2 = false
     var body: some View {
         Text("Welcome to my App")
+        Button(action:{
+            clicked2.toggle()
+            
+        }) {
+            if isHappy{
+                Image("smiley")
+                    .resizable()
+                    .frame(width: 100.0, height: 100.0)
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+            }
+            else{
+                Image("wat")
+                    .resizable()
+                    .frame(width: 100.0, height: 100.0)
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+            }
+            
+        }
+        if (clicked2==true){
+            NewView2()
+            
+        }
     }
 }
+struct NewView2: View {
+    
+    var body: some View {
+        Text("Ouch, why hit me")
+        
+        
+    }
+}
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
