@@ -6,16 +6,31 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
+    @State var clicked = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image("javaphoto")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("AP Exam Project!")
+                .padding(.top, 9.0)
+            Button("Continue") {
+                print("wow")
+                clicked = true
+                
+            }
+            .padding(.top, 2.0)
         }
-        .padding()
+        if (clicked == true){
+            NewView()
+        }
+    }
+}
+
+struct NewView: View {
+    var body: some View {
+        Text("hello,,, testing")
     }
 }
 

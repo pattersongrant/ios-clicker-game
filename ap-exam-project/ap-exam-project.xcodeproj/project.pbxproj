@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313229BE2A0EB00700F2A5A5 /* view2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313229BD2A0EB00700F2A5A5 /* view2.swift */; };
+		313229C02A11681D00F2A5A5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313229BF2A11681D00F2A5A5 /* SwiftUIView.swift */; };
 		313355632A0E912B00B26C63 /* ap_exam_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313355622A0E912B00B26C63 /* ap_exam_projectApp.swift */; };
 		313355652A0E912B00B26C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313355642A0E912B00B26C63 /* ContentView.swift */; };
 		313355672A0E912C00B26C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 313355662A0E912C00B26C63 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		313229BD2A0EB00700F2A5A5 /* view2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view2.swift; sourceTree = "<group>"; };
+		313229BF2A11681D00F2A5A5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		3133555F2A0E912B00B26C63 /* ap-exam-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ap-exam-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		313355622A0E912B00B26C63 /* ap_exam_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ap_exam_projectApp.swift; sourceTree = "<group>"; };
 		313355642A0E912B00B26C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				313355622A0E912B00B26C63 /* ap_exam_projectApp.swift */,
 				313355642A0E912B00B26C63 /* ContentView.swift */,
+				313229BF2A11681D00F2A5A5 /* SwiftUIView.swift */,
+				313229BD2A0EB00700F2A5A5 /* view2.swift */,
 				313355662A0E912C00B26C63 /* Assets.xcassets */,
 				313355682A0E912C00B26C63 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				313355652A0E912B00B26C63 /* ContentView.swift in Sources */,
 				313355632A0E912B00B26C63 /* ap_exam_projectApp.swift in Sources */,
+				313229C02A11681D00F2A5A5 /* SwiftUIView.swift in Sources */,
+				313229BE2A0EB00700F2A5A5 /* view2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
