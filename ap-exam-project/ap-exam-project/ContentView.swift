@@ -10,18 +10,20 @@ var isHappy = true
 struct ContentView: View {
     @State var clicked = false
     var body: some View {
-        VStack {
-            Image("javaphoto")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("AP Exam Project!")
-                .padding(.top, 9.0)
-            Button("Continue") {
-                print("wow")
-                clicked.toggle()
-                
+        if (clicked==false){
+            VStack {
+                Image("javaphoto")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("AP Exam Project!")
+                    .padding(.top, 9.0)
+                Button("Continue") {
+                    print("wow")
+                    clicked.toggle()
+                    
+                }
+                .padding(.top, 2.0)
             }
-            .padding(.top, 2.0)
         }
         if (clicked == true){
             NewView()
@@ -32,9 +34,12 @@ struct ContentView: View {
 struct NewView: View {
     @State var clicked2 = false
     var body: some View {
-        Text("Welcome to my App")
+        if(clicked2==false){
+            Text("Welcome to my App")
+        }
         Button(action:{
             clicked2.toggle()
+            isHappy.toggle()
             
         }) {
             if isHappy{
