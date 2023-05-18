@@ -7,16 +7,12 @@
 
 import SwiftUI
 var isHappy = true
-var allOff = false
+var finalClick = false
 struct ContentView: View {
     @State var clicked = false
-    //@State var update = 0
     var body: some View {
-        if allOff{
-            SuperStart()
-            //update+=1
-        }
-        if (clicked==false&&allOff==false){
+        
+        if (clicked==false){
             VStack {
                 Image("javaphoto")
                     .imageScale(.large)
@@ -26,7 +22,6 @@ struct ContentView: View {
                 Button("Continue") {
                     print("wow")
                     clicked.toggle()
-                    
                 }
                 .padding(.top, 2.0)
             }
@@ -41,7 +36,7 @@ struct NewView: View {
     @State var clicked2 = false
     var body: some View {
 
-        if(clicked2==false&&allOff==false){
+        if clicked2==false{
             Text("Welcome to my App")
         }
         Button(action:{
@@ -49,22 +44,26 @@ struct NewView: View {
             isHappy.toggle()
             
         }) {
-            if isHappy && allOff==false{
+            if isHappy{
                 Image("smiley")
                     .resizable()
                     .frame(width: 100.0, height: 100.0)
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
+                if finalClick{
+                Text("Click face --> Start App")
+                }
             }
-            if !isHappy && allOff==false {
+            if !isHappy && !finalClick{
                 Image("wat")
                     .resizable()
                     .frame(width: 100.0, height: 100.0)
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
             }
+            }
             
-        }
+        
         if (clicked2==true){
             NewView2()
             
@@ -72,28 +71,16 @@ struct NewView: View {
     }
 }
 struct NewView2: View {
-    @State var finalClick = false
-    @State var realAppStart = false
     var body: some View {
-        
-        Text("Ouch, why hit me")
-        Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-            finalClick = true
-            allOff=true
-            print("heya testing")
-            
-        
+        if !finalClick{
+            Text("Ouch, why hit me")
+            Button("Click this") {
+                finalClick = true
+                print("heya testing")
+            }
         }
         if finalClick == true{
             TesterView()
-            ContentView()
-            viewer5()
-            
-        }
-    }
-struct viewer5: View {
-        var body: some View {
-            Text("what")
         }
     }
 }
