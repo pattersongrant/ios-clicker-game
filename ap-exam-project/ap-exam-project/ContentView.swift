@@ -87,7 +87,13 @@ struct NewView2: View {
         if finalClick == true{
             TesterView()
             ContentView()
+            viewer5()
             
+        }
+    }
+struct viewer5: View {
+        var body: some View {
+            Text("what")
         }
     }
 }
