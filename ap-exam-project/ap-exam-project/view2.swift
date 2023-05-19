@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import AVFoundation
+var player: AVAudioPlayer!
 struct TesterView: View {
     var body: some View {
         TabView {
@@ -25,6 +26,10 @@ struct TesterView: View {
                 }
     }
 }
+func playSound(){
+    
+}
+
 struct MenuView: View {
     var body: some View {
         NavigationStack {
@@ -61,6 +66,11 @@ struct OrderView: View {
 struct ToDoList: View {
     var body: some View {
         Text("ToDoList Functionality")
+        Button(action: {
+            //play music
+        }) {
+            Text("Play music")
+        }
         
     }
 }
