@@ -14,28 +14,56 @@ struct TesterView: View {
                         .tabItem {
                             Label("Menu", systemImage: "list.dash")
                         }
-
                     OrderView()
                         .tabItem {
                             Label("Order", systemImage: "square.and.pencil")
+                        }
+                    ToDoList()
+                        .tabItem {
+                            Label("Order", systemImage: "star.fill")
                         }
                 }
     }
 }
 struct MenuView: View {
     var body: some View {
-        Image("javaphoto")
+        NavigationStack {
+            Image("javaphoto")
+                        .toolbar {
+                            ToolbarItemGroup(placement: .primaryAction) {
+                                Button("About") {
+                                    print("About tapped!")
+                                }
+
+                                Button("Help") {
+                                    print("Help tapped!")
+                                }
+                            }
+                            ToolbarItemGroup(placement: .navigationBarLeading) {
+                                Button("< Back") {
+                                    print("Back tapped!")
+                                }
+
+            
+                            }
+                        }
+                }
         
         
     }
 }
 struct OrderView: View {
     var body: some View {
-        Text("OrderView")
+        Image("wat")
         
     }
 }
-
+struct ToDoList: View {
+    var body: some View {
+        Text("ToDoList Functionality")
+        
+    }
+}
 
 struct view2_Previews: PreviewProvider {
     static var previews: some View {
