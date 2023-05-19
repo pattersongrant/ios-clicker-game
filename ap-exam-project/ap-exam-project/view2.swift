@@ -9,7 +9,29 @@ import SwiftUI
 
 struct TesterView: View {
     var body: some View {
-        Text("This is from a second file")
+        TabView {
+                    MenuView()
+                        .tabItem {
+                            Label("Menu", systemImage: "list.dash")
+                        }
+
+                    OrderView()
+                        .tabItem {
+                            Label("Order", systemImage: "square.and.pencil")
+                        }
+                }
+    }
+}
+struct MenuView: View {
+    var body: some View {
+        Image("javaphoto")
+        
+        
+    }
+}
+struct OrderView: View {
+    var body: some View {
+        Text("OrderView")
         
     }
 }
@@ -18,6 +40,5 @@ struct TesterView: View {
 struct view2_Previews: PreviewProvider {
     static var previews: some View {
         TesterView()
-        
     }
 }
