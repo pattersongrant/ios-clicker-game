@@ -67,20 +67,22 @@ struct ToDoList: View {
     @State var lineCount = 0
     @Binding var numSubmissions: Int
     var body: some View {
-        TextField("Start Writing", text: $line1)
-            .position(x: 210, y: 75)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .onSubmit{
-                numSubmissions = numSubmissions + 1
-                lineCount = lineCount + 1
-            }
-        ForEach(0..<numSubmissions, id: \.self){index in
-            TextField("...", text: .constant(""))
-                .position(x: 210, y: (75+CGFloat(numSubmissions)*15))
+        VStack{
+            TextField("Start Writing", text: $line1)
+                .position(x: 210, y: 75)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .onSubmit{
                     numSubmissions = numSubmissions + 1
+                    lineCount = lineCount + 1
                 }
+            ForEach(0..<numSubmissions, id: \.self){index in
+                TextField("...", text: .constant(""))
+                    .position(x: 210, y: (75+CGFloat(numSubmissions)*15))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onSubmit{
+                        numSubmissions = numSubmissions + 1
+                    }
+            }
         }
     }
 }
