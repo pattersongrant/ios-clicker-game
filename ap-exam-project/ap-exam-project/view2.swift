@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct TesterView: View {
+    @State var numSubmissions = 0
     var body: some View {
         TabView {
                     MenuView()
@@ -17,7 +18,8 @@ struct TesterView: View {
                         .tabItem {
                             Label("Order", systemImage: "square.and.pencil")
                         }
-                    ToDoList()
+                    
+                ToDoList(numSubmissions: $numSubmissions)
                         .tabItem {
                             Label("To Do", systemImage: "star.fill")
                         }
@@ -26,6 +28,7 @@ struct TesterView: View {
 }
 
 struct MenuView: View {
+    
     var body: some View {
         NavigationStack {
             Image("javaphoto")
@@ -58,15 +61,27 @@ struct OrderView: View {
     }
 }
 
+
 struct ToDoList: View {
     @State var line1 = ""
-    @State var newLine = false
     @State var lineCount = 0
+    @Binding var numSubmissions: Int
     var body: some View {
         TextField("Start Writing", text: $line1)
-            .position(x: 215, y: 75)
-
-
+            .position(x: 210, y: 75)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .onSubmit{
+                numSubmissions = numSubmissions + 1
+                lineCount = lineCount + 1
+            }
+        ForEach(0..<numSubmissions, id: \.self){index in
+            TextField("...", text: .constant(""))
+                .position(x: 210, y: (75+CGFloat(numSubmissions)*15))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .onSubmit{
+                    numSubmissions = numSubmissions + 1
+                }
+        }
     }
 }
 
