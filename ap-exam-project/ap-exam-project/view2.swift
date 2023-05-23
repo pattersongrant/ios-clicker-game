@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import AVFoundation
-var player: AVAudioPlayer!
 struct TesterView: View {
     var body: some View {
         TabView {
@@ -21,13 +19,10 @@ struct TesterView: View {
                         }
                     ToDoList()
                         .tabItem {
-                            Label("Order", systemImage: "star.fill")
+                            Label("To Do", systemImage: "star.fill")
                         }
                 }
     }
-}
-func playSound(){
-    
 }
 
 struct MenuView: View {
@@ -60,18 +55,18 @@ struct MenuView: View {
 struct OrderView: View {
     var body: some View {
         Image("wat")
-        
     }
 }
+
 struct ToDoList: View {
+    @State var line1 = ""
+    @State var newLine = false
+    @State var lineCount = 0
     var body: some View {
-        Text("ToDoList Functionality")
-        Button(action: {
-            //play music
-        }) {
-            Text("Play music")
-        }
-        
+        TextField("Start Writing", text: $line1)
+            .position(x: 215, y: 75)
+
+
     }
 }
 
