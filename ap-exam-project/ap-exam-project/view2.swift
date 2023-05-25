@@ -12,20 +12,20 @@ import Foundation
 struct TesterView: View {
     @State var numSubmissions = 0
     @State var textContent = [""]
-    
-
-
-
+    @State var showSecret = false
     
     var body: some View {
         TabView {
-                    MenuView()
+            if showSecret{
+                secretView()
+                    .tabItem {
+                    Label("Secret", systemImage: "questionmark")
+                }
+            }
+            
+            MenuView(showSecret: $showSecret)
                         .tabItem {
                             Label("Menu", systemImage: "list.dash")
-                        }
-                    OrderView()
-                        .tabItem {
-                            Label("Order", systemImage: "square.and.pencil")
                         }
                     
             ToDoList(numSubmissions: $numSubmissions, textContent: $textContent)
@@ -37,8 +37,6 @@ struct TesterView: View {
                 Label("Akshar", systemImage: "ellipsis.message")
             }
                 .badge(10)
-                
-
                 }
     }
 }
@@ -46,6 +44,7 @@ struct TesterView: View {
 struct MenuView: View {
     @State var showAbout = false
     @State var showHelp = false
+    @Binding var showSecret: Bool
     var body: some View {
         NavigationStack {
             if showAbout{
@@ -90,6 +89,8 @@ struct MenuView: View {
                             ToolbarItemGroup(placement: .navigationBarLeading) {
                                 Button("< Back") {
                                     print("Back tapped!")
+                                    showSecret = true
+                                    
                                 }
 
             
@@ -98,11 +99,6 @@ struct MenuView: View {
                 }
         
         
-    }
-}
-struct OrderView: View {
-    var body: some View {
-        Image("wat")
     }
 }
 
@@ -152,6 +148,24 @@ struct AksharView: View {
                     .padding(.bottom, 50.0)
                 Text("Ryan Lin")
                 Image("wat")
+            }
+            
+        }
+    }
+}
+struct secretView: View {
+    var body: some View {
+        ScrollView{
+            VStack{
+                Text("Grant")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                ZStack{
+                    Image("penguino")
+                    Text("\n\n\nMeow")
+                        
+                    
+                }
             }
             
         }
