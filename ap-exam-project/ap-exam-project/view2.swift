@@ -47,40 +47,44 @@ struct MenuView: View {
     @Binding var showSecret: Bool
     var body: some View {
         NavigationStack {
-            if showAbout{
+            ZStack{
+                Image("catbg")
+                    .opacity(0.2)
                 VStack{
-                    Text("This is an app I made for the CSA Project. Feel free to click around the app and find out all the functionality.")
-                    Button("hide"){
-                        showAbout.toggle()
+                    if showAbout{
+                        VStack{
+                            Text("This is an app I made for the CSA Project. Feel free to click around the app and find out all the functionality.")
+                            Button("hide"){
+                                showAbout.toggle()
+                            }
+                            .padding(.top, 20.0)
+                            .buttonStyle(.bordered)
+                            
+                        }
+                        .frame(width: 300, height: 200)
+                        .background(Rectangle().fill(Color.white).shadow(radius: 3))
                     }
-                    .padding(.top, 20.0)
-                    .buttonStyle(.bordered)
-
-                }
-                .frame(width: 300, height: 200)
-                    .background(Rectangle().fill(Color.white).shadow(radius: 3))
-            }
-            if showHelp{
-                VStack{
-                    Text("Try clicking the tabs at the bottom to view different parts of the app!")
-                    Button("hide"){
-                        showHelp.toggle()
+                    if showHelp{
+                        VStack{
+                            Text("Try clicking the tabs at the bottom to view different parts of the app!")
+                            Button("hide"){
+                                showHelp.toggle()
+                            }
+                            .padding(.top, 20.0)
+                            .buttonStyle(.bordered)
+                            
+                        }
+                        .frame(width: 300, height: 200)
+                        .background(Rectangle().fill(Color.white).shadow(radius: 3))
                     }
-                    .padding(.top, 20.0)
-                    .buttonStyle(.bordered)
-
-                }
-                .frame(width: 300, height: 200)
-                    .background(Rectangle().fill(Color.white).shadow(radius: 3))
-            }
-            Image("javaphoto")
+                    Image("javaphoto")
                         .toolbar {
                             ToolbarItemGroup(placement: .primaryAction) {
                                 Button("About") {
                                     print("About tapped!")
                                     showAbout.toggle()
                                 }
-
+                                
                                 Button("Help") {
                                     print("Help tapped!")
                                     showHelp.toggle()
@@ -89,14 +93,16 @@ struct MenuView: View {
                             ToolbarItemGroup(placement: .navigationBarLeading) {
                                 Button("< Back") {
                                     print("Back tapped!")
-                                    showSecret = true
+                                    showSecret.toggle()
                                     
                                 }
-
-            
+                                
+                                
                             }
                         }
                 }
+            }
+        }
         
         
     }
@@ -123,21 +129,23 @@ struct ToDoList: View {
                     }
                 
                 ForEach(0..<numSubmissions, id: \.self){index in
-                    TextField("...", text: ($textContent[index]))
-                        .padding(.top, 10.0)
+                        TextField("...", text: ($textContent[index]))
 
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .onSubmit{
-                            numSubmissions = numSubmissions + 1
-                            textContent.append("")
-                            
-                            
-                        }
-                }
+                            .offset()
+                            .padding(.top, 10.0)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .onSubmit{
+                                numSubmissions = numSubmissions + 1
+                                textContent.append("")
+                                
+                                
+                            }
+                    }
             }
             .padding(.top, 2.0)
             .position(x:210, y: 75)
-        }
+        
+             }
 }
 struct AksharView: View {
     var body: some View {
