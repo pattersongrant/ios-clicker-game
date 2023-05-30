@@ -171,7 +171,7 @@ struct AksharView: View {
 }
 struct ClickerView: View {
     @State var rotation = 0
-    @State var textList = ["try clicking me", "great work!", "nice!", "amazing", "SUPER!", "what a tap!", "nice one!", "you can do it!", "LET'S GO!", "click again!"]
+    @State var textList = ["try clicking me", "great work!", "nice!", "amazing", "SUPER!", "what a tap!", "nice one!", "you can do it!", "LET'S GO!", "click again!", "Keep going!", "You're on fire!", "Never give up!", "Awesome job!", "Well done!", "You're crushing it!", "One more click!", "You're unstoppable!", "Amazing progress!", "Excellent work!", "Stay focused!", "Keep tapping away!", "You're a click master!", "Inspiring effort!", "Just a little more!", "You're making waves!", "Tremendous effort!", "Way to go!", "Incredible stamina!", "You're a superstar!", "The sky's the limit!", "Push it to the max!", "Phenomenal tapping!", "Keep that momentum!", "Bravo!", "You're a click champion!", "Never back down!", "Fantastic job!", "More power to you!", "Unbelievable determination!", "Your perseverance shines!", "Keep those clicks coming!", "You're a force to be reckoned with!", "Stellar performance!", "Keep up the great work!", "You're a click warrior!", "Inspiring dedication!", "Every click counts!", "Don't stop now!", "You're doing amazing!", "You're a click legend!", "The world needs your clicks!", "Keep that rhythm going!", "You're in a league of your own!", "Keep tapping like a pro!", "You're unstoppable!", "Rise to the challenge!", "Click like there's no tomorrow!", "Keep that motivation high!", "You're a click maestro!", "Your dedication is inspiring!", "You're a click virtuoso!", "Show them what you've got!", "Click your way to success!", "Keep that energy up!", "You're on the right track!", "Nothing can slow you down!", "Click your way to greatness!", "You're a click superstar!", "Your determination is awe-inspiring!", "Keep tapping, keep shining!", "You're a click phenomenon!", "Don't let anything hold you back!", "Click your way to victory!", "Your clicks are extraordinary!", "Keep those taps coming!", "You're an inspiration to others!", "Click like there's no tomorrow!", "Keep that positive energy flowing!", "You're a click prodigy!", "Nothing can stop you now!", "Click with all your might!", "You're a click hero!", "Keep up the amazing work!", "Your clicks are legendary!", "Click your way to excellence!", "You're on a roll!", "Keep that motivation burning!", "You're a click wizard!", "Never lose your rhythm!", "Click your way to the top!", "You're unstoppable!", "Keep that fire burning!", "You're a click genius!", "Don't hold back!", "Click like a true champion!", "Keep those clicks flowing!", "You're a click superstar!", "Believe in your clicking power!", "Click with passion!", "Keep that drive alive!", "You're a click mastermind!", "Click your way to triumph!", "Keep pushing forward!", "You're a click legend in the making!", "Don't settle for less!", "Click like there's no tomorrow!", "Keep aiming higher!", "You're a click sensation!", "Never underestimate your clicking prowess!"]
     @State var currentText = 0
     @State var temp = 100
     @State var earnings = 1
@@ -227,7 +227,7 @@ struct ClickerView: View {
                     temp = currentText
                     UIApplication.shared.applicationIconBadgeNumber = count
                     while(currentText == temp){
-                        currentText = Int(Float.random(in: 1..<10))
+                        currentText = Int(Float.random(in: 1..<110))
                     }
                 })
                 {
@@ -238,7 +238,7 @@ struct ClickerView: View {
                 }
                 .padding(.bottom, 30.0)
                 VStack{
-                    Text("Count: $" + String(count))
+                    Text("Balance: $" + String(count))
                     Text("Earnings per click: $" + String(earnings))
                         .padding(.top, 20.0)
                 }
