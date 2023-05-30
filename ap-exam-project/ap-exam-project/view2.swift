@@ -37,6 +37,13 @@ struct TesterView: View {
                 Label("Akshar", systemImage: "ellipsis.message")
             }
                 .badge(10)
+            ClickerView()                        .tabItem {
+                Label("Clicker", systemImage: "dollarsign")
+            }
+            MapView()
+                .tabItem {
+                    Label("Map", systemImage: "cube")
+                }
                 }
     }
 }
@@ -159,6 +166,45 @@ struct AksharView: View {
             }
             
         }
+    }
+}
+struct ClickerView: View {
+    @State var count = 0
+    @State var rotation = 0
+    @State var textList = ["try clicking me", "great work!", "nice!", "amazing", "SUPER!", "what a tap!", "nice one!", "you can do it!", "LET'S GO!", "click again!"]
+    @State var currentText = 0
+    @State var temp = 100
+    var body: some View {
+        ZStack{
+            Image("catbg")
+                .opacity(0.2)
+            VStack{
+                Text(textList[currentText])
+                    .padding(.bottom, 20.0)
+                Button(action:{
+                    print("test")
+                    count = count + 1250
+                    rotation = rotation + 25
+                    temp = currentText
+                    while(currentText == temp){
+                        currentText = Int(Float.random(in: 1..<10))
+                    }
+                })
+                {
+                    Image("smileynobg")
+                        .rotationEffect(.degrees(Double(rotation)))
+                    
+                    
+                }
+                Text("Count: $" + String(count))
+                    .padding(.top, 20.0)
+            }
+        }
+    }
+}
+struct MapView: View {
+    var body: some View {
+        Text("view")
     }
 }
 struct secretView: View {

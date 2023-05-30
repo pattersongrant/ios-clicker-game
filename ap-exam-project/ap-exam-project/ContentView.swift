@@ -7,9 +7,9 @@
 
 import SwiftUI
 var isHappy = true
-var finalClick = false
 struct ContentView: View {
     @State var clicked = false
+    @State var finalClick = false
     var body: some View {
         
         if (clicked==false){
@@ -27,13 +27,14 @@ struct ContentView: View {
             }
         }
         if (clicked == true){
-            NewView()
+            NewView(finalClick: $finalClick)
         }
     }
 }
 
 struct NewView: View {
     @State var clicked2 = false
+    @Binding var finalClick: Bool
     var body: some View {
 
         if clicked2==false{
@@ -65,12 +66,13 @@ struct NewView: View {
             
         
         if (clicked2==true){
-            NewView2()
+            NewView2(finalClick: $finalClick)
             
         }
     }
 }
 struct NewView2: View {
+    @Binding var finalClick: Bool
     var body: some View {
         if !finalClick{
             Text("Ouch, why hit me")
