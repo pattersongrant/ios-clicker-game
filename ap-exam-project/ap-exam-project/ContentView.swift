@@ -11,7 +11,6 @@ struct ContentView: View {
     @State var clicked = false
     @State var finalClick = false
     var body: some View {
-        
         if (clicked==false){
             VStack {
                 Image("javaphoto")
@@ -25,6 +24,11 @@ struct ContentView: View {
                 }
                 .padding(.top, 2.0)
             }
+            .onAppear {
+                        
+                        UNUserNotificationCenter.current().requestAuthorization(options: .badge) // Mark 1
+                             { (_, _) in }
+                    }
         }
         if (clicked == true){
             NewView(finalClick: $finalClick)
