@@ -41,10 +41,6 @@ struct TesterView: View {
                 Label("Clicker", systemImage: "dollarsign")
             }
             .badge(count)
-            MapView()
-                .tabItem {
-                    Label("Map", systemImage: "cube")
-                }
                 }
     }
 }
@@ -254,11 +250,6 @@ struct ClickerView: View {
             }
             
         }
-    }
-}
-struct MapView: View {
-    var body: some View {
-        Text("view")
     }
 }
 struct secretView: View {
