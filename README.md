@@ -1,6 +1,6 @@
 # ios-clicker-game
 iOS mobile app including:
-- Clicker game utilizing AI-generated text
+- Clicker game
 - To do list
 - various demos of Swift and SwiftUI capabilities using notification badges, different views, tab bars, etc.
 
